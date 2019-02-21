@@ -26,14 +26,14 @@ private int total;
 	 * total
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	/**
 	 * Method <code>add()</code> adds parameter to the existing <code>total</code> variable.
 	 * @param value
 	 */
 	public void add (int value) {
-		
+		total =+ value;
 	}
 	
 	/** 
@@ -41,25 +41,26 @@ private int total;
 	 * @param value
 	 */
 	public void subtract (int value) {
-		
+		total =- value;
 	}
 	/**
 	 * Method <code>multiply</code> multiplies parameter and existing <code>total</code> together.
 	 * @param value
 	 */
 	public void multiply (int value) {
-		
+		total = total * value;
 	}
 	/**
 	 * Method <code>divide</code> divides <code>total</code> by the parameter. 
 	 * @param value
 	 */
 	public void divide (int value) {
-		
+		total = total / value;
 	}
 	/**
 	 * Method <code>getHistory</code> will return a string of the history of all actions.
 	 * @return
+	 * 
 	 */
 	public String getHistory () {
 		return "";
