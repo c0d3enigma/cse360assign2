@@ -1,5 +1,12 @@
 package cse360assign2;
-
+/*
+ *Author: Brian Moore
+ *ClassID 496
+ *Assignment #2
+ *Program will calculate values based on the called method of either add, subtract,
+ *multiply, or divide. Will store a history of the commands in a history variable.
+ *Will display the results. 
+ */
 /**
  * Class constructor <code>Calculator</code> specifying private variable for
  * total and string object to store history. Class contains 6 methods:
@@ -16,9 +23,12 @@ package cse360assign2;
 public class Calculator {
 
 	private int total;
+	private String historyCalc;
 
 	public Calculator() {
 		total = 0; // not needed - included for clarity
+		historyCalc = "0"; //String variable to store history of calculations 
+
 	}
 
 	/**
@@ -33,44 +43,49 @@ public class Calculator {
 
 	/**
 	 * Method <code>add()</code> adds parameter to the existing <code>total</code>
-	 * variable.
+	 * variable. Will concatenate the history variable.
 	 * 
 	 * @param value
 	 */
 	public void add(int value) {
-		total = +value;
+		total = total + value;
+		historyCalc = historyCalc.concat(" + ") + value;
 	}
 
 	/**
 	 * Method <code>subtract()</code> subtracts parameter from the existing
-	 * <code>total</code> variable.
+	 * <code>total</code> variable. Will concatenate the history variable
 	 * 
 	 * @param value
 	 */
 	public void subtract(int value) {
-		total = -value;
+		total = total - value;
+		historyCalc = historyCalc.concat(" - ") + value;
 	}
 
 	/**
 	 * Method <code>multiply</code> multiplies parameter and existing
-	 * <code>total</code> together.
+	 * <code>total</code> together. will concatenate the history variable
 	 * 
 	 * @param value
 	 */
 	public void multiply(int value) {
 		total = total * value;
+		historyCalc = historyCalc.concat(" * ") + value;
 	}
 
 	/**
 	 * Method <code>divide</code> divides <code>total</code> by the parameter.
-	 * 
+	 * Will check for 0 input value and concatenate the history variable in either case
 	 * @param value
 	 */
 	public void divide(int value) {
 		if (value != 0) {
 			total = total / value;
+			historyCalc = historyCalc.concat(" / ") + value;
 		} else {
 			total = 0;
+			historyCalc = historyCalc.concat(" / ") + value;
 		}
 	}
 
@@ -82,6 +97,6 @@ public class Calculator {
 	 * 
 	 */
 	public String getHistory() {
-		return "";
+		return historyCalc;
 	}
 }
