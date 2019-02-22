@@ -70,7 +70,7 @@ public class Calculator {
 		if (value != 0) {
 			total = total / value;
 		} else {
-			total = 0;
+			total = 0; 
 		}
 	}
 
